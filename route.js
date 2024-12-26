@@ -18,7 +18,7 @@ const requestHandler = (req,res)=>{
     }
     else{
         if(req.url=='/message' || method == 'POST'){
-            //res.setHeader('content-type','text/html');
+            res.setHeader('content-type','text/html');
             let chunks = [];
             req.on('data',(chunk)=>{
                 chunks.push(chunk);
@@ -35,7 +35,7 @@ const requestHandler = (req,res)=>{
                       }
               
                     res.statusCode = 302 ; //redirected
-                    res.setHeader('location','/');
+                    res.setHeader('location','/read');
                     res.end();
                 });
                 
